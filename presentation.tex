@@ -1,0 +1,169 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Autonomous Intelligent System, University of Bonn, LaTeX Beamer theme
+% 
+% Copyright (c) 2010-2013 Dirk Holz, dirk.holz@ieee.org
+% 
+% All rights reserved.
+% 
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met:
+% 
+% 1. Redistributions of source code must retain the above copyright
+% notice, this list of conditions and the following disclaimer.
+% 2. Redistributions in binary form must reproduce the above copyright
+% notice, this list of conditions and the following disclaimer in the
+% documentation and/or other materials provided with the distribution.
+% 
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+% CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+% INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+% MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+% DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+% BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+% EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+% TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+% DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+% ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+% OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+% OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+% POSSIBILITY OF SUCH DAMAGE.
+% 
+% The views and conclusions contained in the software and
+% documentation are those of the authors and should not be
+% interpreted as representing official policies, either expressed
+% or implied, of the FreeBSD Project.
+
+\documentclass[pdftex]{beamer}
+\let\Tiny=\tiny
+
+% all available options ---> 
+% \usetheme[shadow,logoinnavbar,subsection,logoinframe,framenavbar]{AIS}
+\usetheme[shadow,logoinnavbar,subsection]{AIS}
+
+\usepackage{listings}
+
+\title[The AIS Latex Beamer Class]{Presentations with the AIS Beamer Theme}
+% \subtitle{}
+\author[D. Holz]{\highlight{Dirk Holz}\inst{1}, Some Guy\inst{2}, Another Guy\inst{2,3}}
+\institute[University of Bonn]
+{
+  \inst{1}%
+  Department of Computer Science VI\\
+  University of Bonn
+  \and
+  \inst{2}Some Institue
+  \and
+  \inst{3}Some other Institute}
+
+\date{\today}
+
+% This is only inserted into the PDF information catalog. Can be left
+% out.
+\subject{Talks}
+
+% LOGO
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+% \logo{\includegraphics[scale=0.18]{style/logo_uni_bonn_ais.pdf}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+% \AtBeginSubsection[]
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection,hideothersubsection]
+  \end{frame}
+}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+% \beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+  % \tableofcontents[pausesections]
+\end{frame}
+
+
+\section{Introduction}
+
+\subsection{The Template Class}
+
+\begin{frame}
+  empty introduction
+\end{frame}
+
+\section{Contents}
+\subsection[Typical Environments]{Typical Environments for Preseting Things}
+
+\begin{frame}{Itemize, Enumerate and Description}
+  \begin{itemize}
+  \item one item
+    \begin{itemize}
+    \item first subitem
+    \item second subitem
+    \end{itemize}
+  \item another item
+  \item yet another item
+  \end{itemize}
+  \begin{enumerate}
+  \item first item
+  \item second item
+  \item third item
+  \end{enumerate}
+  \begin{description}
+  \item[ABCD] Characters
+  \item[123432] Numbers
+  \item[nothing] ``nothing'' in here
+  \end{description}
+\end{frame}
+
+
+\begin{frame}{Blocks}
+  \begin{block}{block with title}
+    Content: Summarized information in block. 
+  \end{block}  
+  \begin{exampleblock}{An example}
+    Some example in here!
+  \end{exampleblock}
+  \begin{alertblock}{An alert block}
+    For something that's really important and/or a serious drawback of something.
+  \end{alertblock}
+  \begin{block}{}
+    Content of a block without title 
+  \end{block}  
+\end{frame}
+
+
+\section*{Summary}
+
+\begin{frame}
+  \frametitle<presentation>{Summary}
+
+  \begin{itemize}
+  \item The \alert{first main message} of your talk in one or two lines.
+  \end{itemize}
+
+  % The following outlook is optional.
+  \vskip0pt plus.5fill
+  \begin{itemize}
+  \item Outlook
+    \begin{itemize}
+    \item Something you haven't solved.
+    \item Something else you haven't solved.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\end{document}

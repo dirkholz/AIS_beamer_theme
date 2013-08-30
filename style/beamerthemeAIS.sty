@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Autonomous Intelligent System, University of Bonn, LaTeX Beamer theme
+% 
+% Copyright (c) 2010-2013 Dirk Holz, dirk.holz@ieee.org
+% 
+% All rights reserved.
+% 
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met:
+% 
+% 1. Redistributions of source code must retain the above copyright
+% notice, this list of conditions and the following disclaimer.
+% 2. Redistributions in binary form must reproduce the above copyright
+% notice, this list of conditions and the following disclaimer in the
+% documentation and/or other materials provided with the distribution.
+% 
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+% CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+% INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+% MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+% DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+% BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+% EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+% TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+% DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+% ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+% OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+% OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+% POSSIBILITY OF SUCH DAMAGE.
+% 
+% The views and conclusions contained in the software and
+% documentation are those of the authors and should not be
+% interpreted as representing official policies, either expressed
+% or implied, of the FreeBSD Project.
+
+\ProvidesPackageRCS
+
+\newif\ifbeamer@themeAIS@logoinframe
+\newif\ifbeamer@themeAIS@framenavbar
+\DeclareOptionBeamer{subsection}[true]{\def\beamer@themeAIS@subsection{#1}}
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themeAIS@shadow{#1}}
+\DeclareOptionBeamer{logoinnavbar}[true]{\def\beamer@themeAIS@logoinnavbar{#1}}
+\DeclareOptionBeamer{logoinframe}[true]{\csname beamer@themeAIS@logoinframe#1\endcsname}
+\DeclareOptionBeamer{framenavbar}[true]{\csname beamer@themeAIS@framenavbar#1\endcsname}
+\ExecuteOptionsBeamer{subsection=false,shadow=false,logoinnavbar=false,logoinframe=false,framenavbar=false}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\setbeamertemplate{mini frames}[box]
+\useoutertheme[subsection=\beamer@themeAIS@subsection,logoinnavbar=\beamer@themeAIS@logoinnavbar]{AIS}
+
+% \useinnertheme[shadow=true]{rounded}
+% \useinnertheme{rectangles}
+\useinnertheme[shadow=\beamer@themeAIS@shadow]{AIS}
+
+% \usefonttheme{professionalfonts}
+\usefonttheme{default}
+
+\usecolortheme{AIS}
+% \usecolortheme{wald}
+
+\definecolor{AIS_blue}{RGB}{0, 66, 145}
+
+% \setbeamerfont{block title}{size={}}
+
+% \setbeamertemplate{background canvas}[vertical shading][top=white, middle=white, bottom=blue!8!white]
+
+% \defbeamertemplate*{frametitle}{progressbar theme}{
+% \begin{centering}
+%   {\large\textbf{\insertframetitle}\\ \insertframesubtitle}% \insertsubsection
+%   \par
+% \end{centering}
+% }
+
+\newcommand{\AIShighlight}[1]{\textcolor{blue}{#1}}
+\newcommand{\highlight}[1]{\textcolor{blue}{#1}}
+
+
+\ifbeamer@themeAIS@framenavbar
+\usenavigationsymbolstemplate{%
+  \vbox{\hspace*{-1.5cm}
+    \hfill
+    \hbox{\insertslidenavigationsymbol}
+    \hbox{\insertframenavigationsymbol}
+    \hbox{\insertsubsectionnavigationsymbol}
+    \hbox{\insertsectionnavigationsymbol}
+    \hbox{\insertdocnavigationsymbol}
+    \hbox{\insertbackfindforwardnavigationsymbol}
+    \ifbeamer@themeAIS@logoinframe%
+    \includegraphics[scale=0.03]{logo_uni_bonn_bw.pdf}}%
+  \fi%
+}
+\else
+\ifbeamer@themeAIS@logoinframe%
+\usenavigationsymbolstemplate{\includegraphics[scale=0.03]{logo_uni_bonn_bw.pdf}}
+\else
+\usenavigationsymbolstemplate{}
+\fi%
+\fi
+
+% \ifbeamer@themeAIS@logoinframe%
+% \logo{\includegraphics[scale=0.03]{logo_uni_bonn_bw.pdf}}%
+% \fi%
+
+
+% \usenavigationsymbolstemplate{}
+
+\mode
+<all>
