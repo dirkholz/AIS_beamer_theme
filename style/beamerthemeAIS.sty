@@ -49,32 +49,21 @@
 \setbeamertemplate{mini frames}[box]
 \useoutertheme[subsection=\beamer@themeAIS@subsection,logoinnavbar=\beamer@themeAIS@logoinnavbar]{AIS}
 
-% \useinnertheme[shadow=true]{rounded}
-% \useinnertheme{rectangles}
 \useinnertheme[shadow=\beamer@themeAIS@shadow]{AIS}
 
 % \usefonttheme{professionalfonts}
 \usefonttheme{default}
 
 \usecolortheme{AIS}
-% \usecolortheme{wald}
 
 \definecolor{AIS_blue}{RGB}{0, 66, 145}
 
-% \setbeamerfont{block title}{size={}}
-
 % \setbeamertemplate{background canvas}[vertical shading][top=white, middle=white, bottom=blue!8!white]
 
-% \defbeamertemplate*{frametitle}{progressbar theme}{
-% \begin{centering}
-%   {\large\textbf{\insertframetitle}\\ \insertframesubtitle}% \insertsubsection
-%   \par
-% \end{centering}
-% }
-
-\newcommand{\AIShighlight}[1]{\textcolor{blue}{#1}}
-\newcommand{\highlight}[1]{\textcolor{blue}{#1}}
-
+\newcommand{\AIShighlight}[1]{\textcolor{bonnblue}{#1}}
+\newcommand{\highlight}[1]{\textcolor{bonnblue}{#1}}
+\newcommand{\good}[1]{\textcolor{green!60!black}{#1}}
+\newcommand{\bad}[1]{\textcolor{red!80!black}{#1}}
 
 \ifbeamer@themeAIS@framenavbar
 \usenavigationsymbolstemplate{%
@@ -99,11 +88,4 @@
 \fi%
 \fi
 
-% \ifbeamer@themeAIS@logoinframe%
-% \logo{\includegraphics[scale=0.03]{logo_uni_bonn_bw.pdf}}%
-% \fi%
-
-% \usenavigationsymbolstemplate{}
-
-\mode
-<all>
+\mode<all>
